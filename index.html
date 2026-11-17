@@ -745,8 +745,6 @@ function onJournals(list){
   let tab='dash'; try{tab=localStorage.getItem('je-tab')||'dash';}catch(e){}
   renderJournalBar(); showTab(tab);
   await Store.init();
-  setBase(Store.cloud?'Data tersimpan otomatis di akun Claude Anda dan hanya terlihat oleh Anda.':'Data tersimpan di browser ini saja. Buka lewat akun Claude agar tersimpan di akun, dan unduh cadangan JSON secara berkala.');
-  $('#storePill').textContent=Store.cloud?'Akun':'Browser';
   loadTimer=setTimeout(()=>{if(Store.cloud)flash('Data belum terjangkau. Periksa koneksi, daftar akan muncul otomatis.');},10000);
   Store.watchJournals(onJournals,e=>flash('Data tidak dapat dibaca ('+((e&&e.code)||'error')+').'));
 })();
