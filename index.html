@@ -144,7 +144,6 @@ tbody tr:hover{background:var(--bg)}
     </div>
   </div>
 
-  <div class="banner" id="storeBanner"><p id="storeMsg"></p><span class="pill" id="storePill"></span></div>
   <div class="banner demo" id="demoBanner" hidden>
     <p><b>Ini data contoh.</b> Buat jurnal pertama Anda untuk mulai mencatat trade sendiri. Data contoh tidak disimpan.</p>
     <button class="btn pri" type="button" id="btnDemoNew">Buat jurnal saya</button>
@@ -697,7 +696,7 @@ $('#tDel').addEventListener('click',async()=>{
 
 /* ---------- tab, jurnal aktif, mulai ---------- */
 let baseMsg='';
-function setBase(m){baseMsg=m;$('#storeMsg').textContent=m;}
+function setBase(m){baseMsg=m;}
 function flash(m){$('#storeMsg').textContent=m;setTimeout(()=>{$('#storeMsg').textContent=baseMsg;},5000);}
 function renderTab(){
   const j=jOf(); if(!j)return;
